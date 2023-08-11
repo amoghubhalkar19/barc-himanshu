@@ -1,0 +1,64 @@
+/*(oldVal- oldMin)*newRange / oldRange + newMin*/
+
+.header-img{
+    position: sticky;
+    height: 100vh;
+    background-image:linear-gradient(0deg, rgba(109, 108, 108, 0.293), rgba(30, 48, 48, 0.424)), url("/src/assets/Images/mainbuilding.jpg");
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    /* translate: 0 calc(-1% * (max(var(--scroll), 25) - 25) * 100 / 75 ); */
+    --background-opacity: calc(1% * min(var(--scroll), 60) * 100 / 60 );
+
+}
+.top-section{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(240,255,255, var(--background-opacity));
+}
+.header-img-txt{
+    color: white;
+    text-transform: uppercase;
+    /* outline-style: dashed; */
+    -webkit-text-stroke: 2px #032c32;
+}
+
+.header-content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+}
+
+.header-content>div{
+    font-size: 4rem;
+    color: rgb(36, 37, 37);
+    font-weight: 700;
+    transition: all 0.3s ease-in;
+    padding-top: 20%;
+    animation-name: homescreencontent;
+    animation-duration: .5s;
+    translate: 0 calc(-1% * (max(var(--scroll), 15) - 15) * 100 / 85 );
+}
+
+@keyframes homescreencontent {
+    from{
+        transform: translateY(30%) scale(0.5);
+    }
+    to{
+        transform: translateY(0%)  scale(1);
+    }
+}
+
+
+@media (max-width:1001px){
+    .header-content>div{
+        font-size: 3rem;
+        padding: 0 1rem;
+    }
+}
